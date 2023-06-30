@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aakar Furniture || Aakar Designing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/2ea81ab913.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/design/style.css" />
+  </head>
+  <body>
+    <!-- Navbar Component -->
+    <div class="navbar-container">
+      <div class="left-logo-container">
+        <p>Aakar</p>
+      </div>
+      <div class="center-container">
+        <!-- <ul> -->
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Contact</a></li>
+        <!-- </ul> -->
+      </div>
+      <div class="right-container">
+        <button>contact</button>
+        <div class="socials-navbar">
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar component ending  -->
+
+    <!-- sub-main-segment-container starts  -->
+    <div class="sub-main-segment-container">
+      <p>
+        <i class="fa fa-star"></i> Diwali Special || Get 5% Discount On Any
+        Product || Purchase Asap
+      </p>
+    </div>
+    <div class="category-container">
+      <i class="fa fa-solid fa-chair"></i>
+      <i class="fa fa-solid fa-bed"></i>
+      <i class="fa fa-solid fa-bed"></i>
+      <i class="fa fa-ruler-horizontal"></i>
+      <i class="fa fa-solid fa-building"></i>
+      <i class="fa fa-regular fa-landmark"></i>
+    </div>
+    <!-- sub-main-segment-container ends  -->
+
+    <!-- swiper section  -->
+    <div class="slider">
+      <div class="slide active">
+        <img src="../images/photo1.jpg" alt="Image 1" />
+      </div>
+      <div class="slide">
+        <img src="../images/photo2.jpg" alt="Image 2" />
+      </div>
+      <div class="slide">
+        <img src="../images/photo3.jpg" alt="Image 3" />
+      </div>
+      <div class="slider-controls">
+        <button class="prev" onclick="prevSlide()">Prev</button>
+        <button class="next" onclick="nextSlide()">Next</button>
+      </div>
+    </div>
+    <!-- swiper section ends -->
+
+    <!-- best category section starts  -->
+    <div class="general-best-category">
+      <div class="heading-general">
+        <p>Best Product</p>
+      </div>
+      <div class="best-general-product">
+        <div class="container-left">
+          <div class="container-product-fur fur-1">
+            <p>
+              Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+        <div class="container-right">
+          <div class="container-product-fur fur-2">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
+              aut pariatur possimus dolore ab voluptatem?
+            </p>
+          </div>
+          <div class="container-product-fur fur-3">
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of best category section starts  -->
+  </body>
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 5000);
+
+    function nextSlide() {
+      slides[currentSlide].className = 'slide';
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].className = 'slide active';
+    }
+
+    function prevSlide() {
+      slides[currentSlide].className = 'slide';
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].className = 'slide active';
+    }
+  </script>
+  <script src="./javascript/app.js"></script>
+</html>
