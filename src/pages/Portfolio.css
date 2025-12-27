@@ -1,0 +1,746 @@
+/* Portfolio.css */
+
+.portfolio-page {
+    min-height: 100vh;
+    background: var(--color-bg);
+}
+
+/* Creative Banner Section */
+.portfolio-banner {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2a 50%, #0a0a0a 100%);
+    margin-top: var(--nav-height);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Animated Background Elements */
+.banner-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+
+.shape-circle-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8975f 100%);
+    top: -150px;
+    right: -100px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.shape-circle-2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #b8975f 0%, #c9a961 100%);
+    bottom: -100px;
+    left: -80px;
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes floatShape {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(30px, -20px) scale(1.1);
+    }
+}
+
+/* Animated Grid Pattern */
+.bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+/* Animated Lines */
+.bg-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0.15;
+}
+
+.line-1 {
+    width: 40%;
+    top: 20%;
+    left: -40%;
+    animation: lineSlide 8s ease-in-out infinite;
+}
+
+.line-2 {
+    width: 50%;
+    top: 50%;
+    right: -50%;
+    animation: lineSlide 10s ease-in-out infinite 2s;
+}
+
+.line-3 {
+    width: 35%;
+    bottom: 25%;
+    left: -35%;
+    animation: lineSlide 12s ease-in-out infinite 4s;
+}
+
+@keyframes lineSlide {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translateX(200%);
+        opacity: 0.15;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-subtitle {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.banner-subtitle::before,
+.banner-subtitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: var(--color-primary);
+}
+
+.banner-subtitle::before {
+    left: 0;
+}
+
+.banner-subtitle::after {
+    right: 0;
+}
+
+.portfolio-banner .banner-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #fff 0%, #c9a961 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out 0.2s both;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.banner-accent-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #c9a961, transparent);
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.4s both, pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
+    }
+}
+
+
+/* Portfolio Catalog Section */
+.portfolio-catalog-section {
+    padding: 4rem 2rem;
+    position: relative;
+    background: var(--color-bg);
+}
+
+.catalog-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Animated Background Accent */
+.catalog-bg-accent {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03), transparent);
+    border-radius: 50%;
+    animation: pulseGlow 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--color-text-muted);
+    background: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+    color: var(--color-primary);
+}
+
+.filter-tab.active::after {
+    width: 100%;
+}
+
+.filter-pagination {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* Portfolio Masonry Grid */
+.portfolio-masonry-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.portfolio-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--color-surface);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover .card-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Hover Overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.overlay-content h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.overlay-content p {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Modal Popup */
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: modalFadeIn 0.3s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: var(--color-surface);
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    animation: modalSlideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.modal-close:hover {
+    background: var(--color-primary);
+    transform: rotate(90deg);
+}
+
+.modal-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.modal-image-section {
+    position: relative;
+    background: #000;
+}
+
+.modal-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-info-section {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.modal-info-section h2 {
+    font-size: 2rem;
+    color: var(--color-text-main);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.modal-description {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+    .portfolio-masonry-grid {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-banner {
+        height: 150px;
+    }
+
+    .portfolio-banner .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        padding: 0 1.5rem;
+    }
+
+    .banner-subtitle::before,
+    .banner-subtitle::after {
+        width: 20px;
+    }
+
+    .banner-accent-line {
+        width: 40px;
+        margin-top: 1rem;
+    }
+
+    .shape-circle-1,
+    .shape-circle-2 {
+        display: none;
+    }
+
+    .portfolio-catalog-section {
+        padding: 2rem 1rem;
+    }
+
+    .catalog-bg-accent {
+        width: 250px;
+        height: 250px;
+    }
+
+    .filter-tabs {
+        gap: 0.8rem;
+        padding-bottom: 1rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-tab {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        padding: 0.4rem 0;
+    }
+
+    .filter-tab::after {
+        bottom: -1rem;
+    }
+
+    .filter-pagination {
+        font-size: 0.8rem;
+    }
+
+    .portfolio-masonry-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-image-wrapper {
+        height: 250px;
+    }
+
+    .overlay-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .overlay-content p {
+        font-size: 0.75rem;
+    }
+
+    .portfolio-modal {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        max-height: 95vh;
+    }
+
+    .modal-close {
+        top: 1rem;
+        right: 1rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .modal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-image-section {
+        height: 250px;
+    }
+
+    .modal-info-section {
+        padding: 1.5rem;
+    }
+
+    .modal-info-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-description {
+        font-size: 0.9rem;
+    }
+
+    .detail-label,
+    .detail-value {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-banner {
+        height: 130px;
+    }
+
+    .portfolio-banner .banner-title {
+        font-size: 1.5rem;
+    }
+
+    .filter-tabs {
+        gap: 0.5rem;
+    }
+
+    .filter-tab {
+        font-size: 0.65rem;
+    }
+
+    .card-image-wrapper {
+        height: 220px;
+    }
+
+    .card-overlay {
+        padding: 1.5rem;
+    }
+
+    .modal-image-section {
+        height: 200px;
+    }
+
+    .modal-info-section {
+        padding: 1.2rem;
+    }
+
+    .modal-info-section h2 {
+        font-size: 1.1rem;
+    }
+}

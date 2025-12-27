@@ -1,0 +1,125 @@
+/* ========== Contact Form Component Styles ========== */
+.contact-form-container {
+    background: #111;
+    padding: 3rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #c9a961 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.contact-form .input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group textarea {
+    resize: none;
+}
+
+.bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #c9a961;
+    transition: width 0.4s ease;
+}
+
+.input-group input:focus~.bar,
+.input-group select:focus~.bar,
+.input-group textarea:focus~.bar {
+    width: 100%;
+}
+
+.input-group select option {
+    background: #111;
+    color: #fff;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: #c9a961;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(201, 169, 97, 0.3);
+}
+
+.submit-btn svg {
+    width: 20px;
+}
+
+/* Response for small screens */
+@media (max-width: 768px) {
+    .contact-form .input-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-form-container {
+        padding: 2rem;
+    }
+
+    .form-header h3 {
+        font-size: 1.8rem;
+    }
+}

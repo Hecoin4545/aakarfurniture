@@ -1,0 +1,70 @@
+.global-bg-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: floating 20s infinite ease-in-out alternate;
+}
+
+.shape-1 {
+    top: -10%;
+    right: -5%;
+    width: 60vh;
+    height: 60vh;
+    background: var(--color-primary);
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    bottom: -10%;
+    left: -10%;
+    width: 70vh;
+    height: 70vh;
+    background: #333;
+    /* Dark decorative color */
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    top: 40%;
+    left: 40%;
+    width: 40vh;
+    height: 40vh;
+    background: rgba(255, 255, 255, 0.03);
+    animation-duration: 30s;
+}
+
+.bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(30px, 30px) rotate(10deg);
+    }
+}
