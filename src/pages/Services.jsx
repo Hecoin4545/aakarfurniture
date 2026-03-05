@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Services.css';
+import serviceImg1 from '../assets/Atit 2 projects-21.jpg';
+import serviceImg2 from '../assets/Atit 2 projects-22.jpg';
+import serviceImg3 from '../assets/Atit 2 projects-23.jpg';
+import serviceImg4 from '../assets/Atit 2 projects-24.jpg';
+import serviceImg5 from '../assets/Atit 2 projects-25.jpg';
+import serviceImg6 from '../assets/Atit 2 projects-26.jpg';
 
 const Services = () => {
     const navigate = useNavigate();
@@ -10,42 +16,42 @@ const Services = () => {
         {
             id: 1,
             title: "Interior Design",
-            image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1000",
+            image: serviceImg1,
             description: "Our interior design service focuses on creating harmonious spaces that reflect your lifestyle. We handle everything from color palettes and furniture selection to lighting design and spatial planning. Our goal is to transform your vision into a stunning reality that balances aesthetics with functionality.",
             features: ["Spatial Planning", "Color Consultation", "Lighting Design", "Furniture Selection"]
         },
         {
             id: 2,
             title: "Custom Furniture",
-            image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=1000",
+            image: serviceImg2,
             description: "Experience the luxury of furniture designed exclusively for you. Our craftsmen use premium materials to build pieces that fit your space perfectly. Whether it's a statement sofa, a grand dining table, or clever storage solutions, we ensure every detail meets our high standards of quality and design.",
             features: ["Bespoke Design", "Premium Materials", "Exquisite Craftsmanship", "Perfect Fit"]
         },
         {
             id: 3,
             title: "Architecture",
-            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
+            image: serviceImg3,
             description: "Our architectural team designs structures that are both innovative and sustainable. We take a holistic approach, considering the environment, the site, and your specific needs. From initial concept to final construction, we provide detailed plans and oversight to ensure architectural excellence.",
             features: ["Concept Development", "Sustainable Design", "Site Analysis", "Construction Oversight"]
         },
         {
             id: 4,
             title: "3D Visualization",
-            image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=1000",
+            image: serviceImg4,
             description: "See your project come to life before a single brick is laid. Our photorealistic 3D renders allow you to explore every corner of your future space. This visual clarity helps in making informed decisions about materials, textures, and layouts, saving time and resources during the construction phase.",
             features: ["Photorealistic Renders", "Virtual Tours", "Material Simulations", "Lighting Analysis"]
         },
         {
             id: 5,
             title: "Project Management",
-            image: "https://images.unsplash.com/photo-1454165833762-02c3326792da?auto=format&fit=crop&q=80&w=1000",
+            image: serviceImg5,
             description: "We take the stress out of design and construction through meticulous project management. Our team coordinates with contractors, manages timelines, and oversees budgets to ensure your project is completed on time and within scope. We are your single point of contact for peace of mind.",
             features: ["Timeline Management", "Budget Control", "Contractor Coordination", "Quality Assurance"]
         },
         {
             id: 6,
             title: "Home Decor",
-            image: "https://images.unsplash.com/photo-1513519247388-193ad51f507e?auto=format&fit=crop&q=80&w=1000",
+            image: serviceImg6,
             description: "The right decor pieces can breathe life into any room. Our curators help you select accessories, artwork, and textiles that complement your interior design. We specialize in adding those final touches that make a house feel like a home, reflecting your personality in every detail.",
             features: ["Art Curation", "Textile Selection", "Accessory Styling", "Atmosphere Creation"]
         }
@@ -108,7 +114,7 @@ const Services = () => {
                                 onClick={() => openPopup(service)}
                             >
                                 <div className="card-image-content">
-                                    <img src={service.image} alt={service.title} />
+                                    <img src={service.image} alt={service.title} loading="lazy" />
                                     <div className="card-overlay">
                                         <h3>{service.title}</h3>
                                         <div className="card-cta">

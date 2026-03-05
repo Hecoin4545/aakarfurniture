@@ -5,6 +5,8 @@ import ProductCatalog from '../components/ProductCatalog';
 import WhyChooseUs from '../components/WhyChooseUs';
 import HappyCustomers from '../components/HappyCustomers';
 import ContactForm from '../components/ContactForm';
+import welcomeMain from '../assets/KS227538 copy.jpg';
+import welcomeAccent from '../assets/KS227541 copy.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -74,14 +76,16 @@ const Home = () => {
                 <div className="welcome-left-column animate-on-scroll">
                     <div className="welcome-image-wrapper">
                         <img
-                            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop"
+                            src={welcomeMain}
                             alt="Interior Design Main"
                             className="welcome-image-main"
+                            loading="lazy"
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=800&auto=format&fit=crop"
+                            src={welcomeAccent}
                             alt="Interior Detail"
                             className="welcome-image-accent"
+                            loading="lazy"
                         />
                     </div>
 

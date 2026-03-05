@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './About.css';
+import storyImg1 from '../assets/KS227553 copy.jpg';
+import storyImg2 from '../assets/KS227569 copy.jpg';
+import storyImg3 from '../assets/KS227577 copy.jpg';
+import teamImg1 from '../assets/KS227581 copy.jpg';
+import teamImg2 from '../assets/KS227589 copy.jpg';
+import teamImg3 from '../assets/KS227601 copy.jpg';
+import teamImg4 from '../assets/KS227609 copy.jpg';
 
 const About = () => {
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -39,28 +46,28 @@ const About = () => {
             id: 1,
             name: "Rajesh Patel",
             role: "Founder & Lead Architect",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop",
+            image: teamImg1,
             description: "With 20+ years of experience, Rajesh leads our design vision with passion and precision."
         },
         {
             id: 2,
             name: "Priya Sharma",
             role: "Interior Design Director",
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop",
+            image: teamImg2,
             description: "Priya transforms spaces into stunning environments that reflect our clients' personalities."
         },
         {
             id: 3,
             name: "Amit Kumar",
             role: "Project Manager",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop",
+            image: teamImg3,
             description: "Amit ensures every project is delivered on time with exceptional quality and attention to detail."
         },
         {
             id: 4,
             name: "Sneha Desai",
             role: "Senior Designer",
-            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop",
+            image: teamImg4,
             description: "Sneha brings innovative design solutions that blend aesthetics with functionality."
         }
     ];
@@ -148,13 +155,13 @@ const About = () => {
                     <div className="story-images animate-on-scroll">
                         <div className="image-grid">
                             <div className="grid-image large">
-                                <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&auto=format&fit=crop" alt="Our workspace" />
+                                <img src={storyImg1} alt="Our workspace" loading="lazy" />
                             </div>
                             <div className="grid-image small-1">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&auto=format&fit=crop" alt="Design process" />
+                                <img src={storyImg2} alt="Design process" loading="lazy" />
                             </div>
                             <div className="grid-image small-2">
-                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&auto=format&fit=crop" alt="Finished project" />
+                                <img src={storyImg3} alt="Finished project" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -379,7 +386,7 @@ const About = () => {
                         {teamMembers.map((member, index) => (
                             <div key={member.id} className="team-card animate-on-scroll" style={{ transitionDelay: `${index * 0.15}s` }}>
                                 <div className="team-image-wrapper">
-                                    <img src={member.image} alt={member.name} />
+                                    <img src={member.image} alt={member.name} loading="lazy" />
                                     <div className="team-overlay">
                                         <div className="social-links">
                                             <a href="#" className="social-link">

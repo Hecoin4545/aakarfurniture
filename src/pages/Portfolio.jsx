@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import './Portfolio.css';
+import portfolioImg1 from '../assets/Atit 2 projects-27.jpg';
+import portfolioImg2 from '../assets/Atit 2 projects-28.jpg';
+import portfolioImg3 from '../assets/Atit 2 projects-29.jpg';
+import portfolioImg4 from '../assets/Atit 2 projects-30.jpg';
+import portfolioImg5 from '../assets/Atit 2 projects-31.jpg';
+import portfolioImg6 from '../assets/Atit 2 projects-32.jpg';
 
 const Portfolio = () => {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -10,7 +16,7 @@ const Portfolio = () => {
             id: 1,
             title: "The Grey House",
             category: "RESIDENCE",
-            image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&auto=format&fit=crop",
+            image: portfolioImg1,
             description: "A modern residential project featuring minimalist design principles with warm wooden accents and contemporary furnishings. The space emphasizes natural light and open-plan living.",
             location: "Surat, Gujarat",
             year: "2023",
@@ -20,7 +26,7 @@ const Portfolio = () => {
             id: 2,
             title: "Urban Boutique",
             category: "COMMERCIAL",
-            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop",
+            image: portfolioImg2,
             description: "A vibrant retail space designed to showcase fashion with optimal lighting and display arrangements. Features custom shelving and a welcoming atmosphere.",
             location: "Mumbai, Maharashtra",
             year: "2023",
@@ -30,7 +36,7 @@ const Portfolio = () => {
             id: 3,
             title: "Serene Living",
             category: "RESIDENCE",
-            image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop",
+            image: portfolioImg3,
             description: "Contemporary residential interior with a focus on comfort and functionality. Incorporates natural materials and a neutral color palette.",
             location: "Ahmedabad, Gujarat",
             year: "2024",
@@ -40,7 +46,7 @@ const Portfolio = () => {
             id: 4,
             title: "Tech Hub Office",
             category: "OFFICE",
-            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop",
+            image: portfolioImg4,
             description: "Modern office space designed for productivity and collaboration. Features open workstations, meeting pods, and recreational areas.",
             location: "Pune, Maharashtra",
             year: "2023",
@@ -50,7 +56,7 @@ const Portfolio = () => {
             id: 5,
             title: "Heritage Villa",
             category: "ARCHITECTURE",
-            image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop",
+            image: portfolioImg5,
             description: "Architectural masterpiece blending traditional elements with modern amenities. Features custom stonework and landscaped gardens.",
             location: "Jaipur, Rajasthan",
             year: "2022",
@@ -60,7 +66,7 @@ const Portfolio = () => {
             id: 6,
             title: "Cozy Apartment",
             category: "RESIDENCE",
-            image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&auto=format&fit=crop",
+            image: portfolioImg6,
             description: "Compact yet stylish apartment interior maximizing space efficiency. Smart storage solutions and multi-functional furniture.",
             location: "Bangalore, Karnataka",
             year: "2024",
@@ -157,7 +163,7 @@ const Portfolio = () => {
                                 onClick={() => openModal(project)}
                             >
                                 <div className="card-image-wrapper">
-                                    <img src={project.image} alt={project.title} />
+                                    <img src={project.image} alt={project.title} loading="lazy" />
                                     <div className="card-overlay">
                                         <div className="overlay-content">
                                             <h3>{project.title}</h3>

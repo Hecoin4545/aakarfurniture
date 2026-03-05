@@ -15,31 +15,32 @@ const ContactForm = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setStatus('sending');
 
-        try {
-            const response = await fetch('https://formspree.io/f/your_id_here', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+        const { name, email, phone, service, enquiry } = formData;
+        const phoneNumber = "919574036010"; // Using requested number
 
-            if (response.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', phone: '', service: '', enquiry: '' });
-                alert('Thank you! Your message has been sent successfully.');
-            } else {
-                setStatus('error');
-                alert('Oops! Something went wrong. Please try again.');
-            }
-        } catch (error) {
-            setStatus('error');
-            alert('Error sending message. Please check your connection.');
-        }
+        const message = `Hi,
+I would like to make an enquiry.
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+*Service:* ${service}
+*Message:* ${enquiry}`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        // Small delay for better UX
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            setStatus('success');
+            setFormData({ name: '', email: '', phone: '', service: '', enquiry: '' });
+
+            setTimeout(() => setStatus(''), 5000);
+        }, 1000);
     };
 
     return (
@@ -113,7 +114,10 @@ const ContactForm = () => {
                     <span className="bar"></span>
                 </div>
                 <button type="submit" className="submit-btn" disabled={status === 'sending'}>
-                    <span>{status === 'sending' ? 'Sending...' : 'Send Enquiry'}</span>
+                    <span>
+                        {status === 'sending' ? 'Redirecting to WhatsApp...' :
+                            status === 'success' ? 'Enquiry Sent!' : 'Send Enquiry'}
+                    </span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
             </form>

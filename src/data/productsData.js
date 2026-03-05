@@ -1,4 +1,13 @@
 // Shared product data for the application
+import productImg1 from '../assets/Atit 2 projects-33.jpg';
+import productImg2 from '../assets/Atit 2 projects-34.jpg';
+import productImg3 from '../assets/Atit 2 projects-35.jpg';
+import productImg4 from '../assets/Atit 2 projects-36.jpg';
+import productImg5 from '../assets/KS227627 copy.jpg';
+import productImgAlt1 from '../assets/KS227535 copy.jpg 1.jpg';
+import productImgAlt2 from '../assets/KS227553 copy.jpg';
+import productImgAlt3 from '../assets/KS227569 copy.jpg';
+
 export const productsData = {
     1: {
         id: 1,
@@ -14,9 +23,9 @@ export const productsData = {
             { name: "Midnight Black", hex: "#222222" }
         ],
         images: [
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop"
+            productImg1,
+            productImg2,
+            productImg3
         ],
         description: "The Serenity Timber Loveseat combines timeless elegance with modern comfort. Crafted from premium hardwood and upholstered in luxurious velvet, this piece is designed to be the centerpiece of your living space.",
         features: [
@@ -50,9 +59,9 @@ export const productsData = {
             { name: "Navy Blue", hex: "#1B2631" }
         ],
         images: [
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop"
+            productImg2,
+            productImg3,
+            productImg4
         ],
         description: "A contemporary masterpiece that redefines comfort. The Block Nomad Sofa features clean lines, modular design, and exceptional craftsmanship perfect for modern living spaces.",
         features: [
@@ -85,9 +94,9 @@ export const productsData = {
             { name: "Emerald Green", hex: "#138D75" }
         ],
         images: [
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop"
+            productImg3,
+            productImg4,
+            productImg5
         ],
         description: "Add a pop of color and luxury to any room with this stunning velvet accent chair. Its bold design and plush comfort make it both a statement piece and a cozy retreat.",
         features: [
@@ -120,9 +129,9 @@ export const productsData = {
             { name: "Matte Black", hex: "#212121" }
         ],
         images: [
-            "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop"
+            productImg4,
+            productImg5,
+            productImgAlt1
         ],
         description: "Sleek, functional, and beautifully crafted. This minimalist coffee table brings Scandinavian design principles to your living room with its clean lines and quality construction.",
         features: [
@@ -154,9 +163,9 @@ export const productsData = {
             { name: "Graphite Grey", hex: "#555555" }
         ],
         images: [
-            "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop"
+            productImg5,
+            productImgAlt2,
+            productImgAlt3
         ],
         description: "Experience ultimate relaxation with our premium Luxe Recliner. Featuring top-grain leather, power reclining mechanism, and built-in massage functions for the ultimate comfort experience.",
         features: [
@@ -185,7 +194,7 @@ export const products = [
         name: "Serenity Timber Loveseat",
         originalPrice: "$1499",
         price: "$1299",
-        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop",
+        image: productImg1,
         colors: ["#8D8D8D", "#D4AF37", "#222222"]
     },
     {
@@ -193,7 +202,7 @@ export const products = [
         name: "Block Nomad Sofa",
         originalPrice: "$1899",
         price: "$1699",
-        image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=800&auto=format&fit=crop",
+        image: productImg2,
         colors: ["#444444", "#E5E5E5", "#1B2631"]
     },
     {
@@ -201,7 +210,7 @@ export const products = [
         name: "Velvet Accent Chair",
         originalPrice: "$899",
         price: "$699",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
+        image: productImg3,
         colors: ["#1B4F72", "#138D75"]
     },
     {
@@ -209,7 +218,7 @@ export const products = [
         name: "Minimalist Coffee Table",
         originalPrice: "$599",
         price: "$449",
-        image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800&auto=format&fit=crop",
+        image: productImg4,
         colors: ["#5D4037", "#212121"]
     },
     {
@@ -217,7 +226,7 @@ export const products = [
         name: "Luxe Recliner",
         originalPrice: "$2100",
         price: "$1850",
-        image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800&auto=format&fit=crop",
+        image: productImg5,
         colors: ["#000000", "#555555"]
     }
 ];
